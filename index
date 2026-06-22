@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karaoğlu Su – İstanbul Su Tankeri Hizmeti</title>
+  <meta name="description" content="Karaoğlu Su – İstanbul'da 7/24 Kesintisiz Su Tankeri Hizmeti. 8 Tonluk Tanker, Orman Kaynaklı Temiz Su, Tazyikli Su. Kağıthane, Beşiktaş, Sarıyer ve daha fazlası." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0A1628;
+      --ocean:     #1A3A5C;
+      --blue:      #2A7FD4;
+      --sky:       #E8F4FD;
+      --accent:    #0EA5E9;
+      --white:     #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #FAFCFF;
+      color: var(--navy);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(42, 127, 212, 0.2);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    @media (max-width: 500px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(150deg, #0A1628 0%, #1A3A5C 60%, #0f2a47 100%);
+      padding: 130px 1.25rem 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,127,212,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #7DD3FC;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #0EA5E9;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(14,165,233,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(14,165,233,0.3); }
+      50% { box-shadow: 0 0 0 6px rgba(14,165,233,0.1); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin: 0 0 1rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin: 0 auto 2.25rem;
+      max-width: 560px;
+    }
+
+    .hero-sub strong { color: rgba(255,255,255,0.9); }
+
+    .hero-cta {
+      display: flex;
+      gap: 0.875rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.875rem 1.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* wave divider */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin-top: -2px;
+    }
+
+    .wave-divider svg { display: block; width: 100%; }
+
+    /* ── SECTIONS SHARED ── */
+    section { padding: 72px 1.25rem; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--navy);
+      margin: 0 0 0.75rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: #5A6A7E;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0;
+    }
+
+    .section-header { margin-bottom: 3rem; }
+
+    /* ── FEATURES ── */
+    #ozelliklerimizsec {
+      background: var(--sky);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(14,165,233,0.12);
+      box-shadow: 0 2px 12px rgba(10,22,40,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(10,22,40,0.10);
+    }
+
+    .feature-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, #E8F4FD 0%, #C7E8FA 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.875rem;
+      color: #5A6A7E;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── SERVICES ── */
+    #hizmetlerimiz { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      background: #F7FAFC;
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      border: 1px solid #E2EBF4;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--blue));
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(10,22,40,0.10);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 0.875rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: #5A6A7E;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* ── WATER QUALITY NOTE ── */
+    .water-note {
+      background: linear-gradient(135deg, #EFF8FF 0%, #DBEEF9 100%);
+      border: 1px solid rgba(14,165,233,0.2);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .water-note-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 2px; }
+
+    .water-note-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1A3A5C;
+      margin: 0 0 0.3rem;
+    }
+
+    .water-note-text p {
+      font-size: 0.85rem;
+      color: #2A5B8A;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── REGIONS ── */
+    #bolgeler { background: var(--sky); }
+
+    .region-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+    }
+
+    .region-pill {
+      background: var(--white);
+      border: 1.5px solid #C7DFF4;
+      color: var(--ocean);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 100px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      cursor: default;
+    }
+
+    .region-pill:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* ── PRICING + CONTACT ── */
+    #iletisim { background: var(--white); }
+
+    .pricing-note {
+      background: linear-gradient(135deg, #0A1628 0%, #1A3A5C 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-note .big-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7DD3FC;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-note h3 {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin: 0 0 1rem;
+    }
+
+    .pricing-note p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    .pricing-pills {
+      display: flex;
+      justify-content: center;
+      gap: 0.625rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-pill {
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: #7DD3FC;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+    }
+
+    .contact-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      .contact-row { grid-template-columns: 1fr; }
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .contact-link-wa {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    }
+
+    .contact-link-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+    }
+
+    .contact-link-tel {
+      background: var(--sky);
+      color: var(--ocean);
+      border: 2px solid #C7DFF4;
+    }
+
+    .contact-link-tel:hover {
+      transform: translateY(-3px);
+      background: #D8EEFA;
+    }
+
+    .contact-link-tel-full {
+      background: var(--ocean);
+      color: #fff;
+    }
+
+    .contact-link-tel-full:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(26,58,92,0.35);
+    }
+
+    .info-strip {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.83rem;
+      color: #5A6A7E;
+    }
+
+    .info-item span { font-weight: 600; color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1.25rem;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    footer strong { color: rgba(255,255,255,0.8); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ NAV ═══════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Karaoğlu <span>Su</span></a>
+    <ul class="nav-links">
+      <li><a href="#hizmetlerimiz">Hizmetler</a></li>
+      <li><a href="#bolgeler">Bölgeler</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">7/24 Kesintisiz Hizmet</div>
+
+    <h1>
+      İstanbul'un Her Köşesine<br>
+      <em>Su Getiriyoruz.</em>
+    </h1>
+
+    <p class="hero-sub">
+      Ayazağa merkezli <strong>8 Tonluk Tankerimizle</strong> şantiyenize, inşaatınıza veya temizlik alanınıza orman kaynaklı temiz su taşıyoruz. Yılın 365 günü, gece gündüz.
+    </p>
+
+    <div class="hero-cta">
+      <a href="https://wa.me/905XXXXXXXXX" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.117 1.529 5.847L.057 23.885a.5.5 0 0 0 .641.619l6.294-1.964A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.073-1.392l-.362-.215-3.756 1.171 1.239-3.637-.236-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp ile Hemen Ara
+      </a>
+      <a href="tel:+905XXXXXXXXX" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Telefon Et
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:#0A1628;">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:60px;">
+    <path d="M0,40 C240,70 480,10 720,40 C960,70 1200,10 1440,40 L1440,60 L0,60 Z" fill="#E8F4FD"/>
+  </svg>
+</div>
+
+
+<!-- ═══════════════════════════════════ FEATURES ═══════════════════════════════════ -->
+<section id="ozelliklerimizsec" style="background:#E8F4FD; padding-top:60px;">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:center;">
+      <div class="section-label">Neden Karaoğlu Su?</div>
+      <h2 class="section-title">Fark Yaratan Hizmet Anlayışı</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🕐</div>
+        <h3>7/24 Kesintisiz Hizmet</h3>
+        <p>Gece ya da gündüz, hafta içi ya da tatil — fark etmez. İhtiyacınız olduğunda anında yoldayız.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>8 Tonluk Tanker Kapasitesi</h3>
+        <p>Büyük hacimli tankerimizle tek seferde daha fazla su, daha az mola, daha hızlı iş tamamlama.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌲</div>
+        <h3>Orman Kaynaklı Temiz Su</h3>
+        <p>Doğrudan orman ve kaynak bölgelerinden temin edilen, berrak, tortusuz, saf kullanım suyu.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💧</div>
+        <h3>Tazyikli Su Sistemi</h3>
+        <p>Yüksek basınçlı su tahliyesi sayesinde kurban yeri temizliği, yol yıkama ve toz indirgeme işlemleri kolayca tamamlanır.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ SERVICES ═══════════════════════════════════ -->
+<section id="hizmetlerimiz">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Hizmetlerimiz</div>
+      <h2 class="section-title">Ne İçin Su Gerekirse<br>Biz Oradayız</h2>
+      <p class="section-desc">Şantiyeden kurban yerine, yol temizliğinden büyük depo dolumuna kadar geniş hizmet yelpazemizle yanınızdayız.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🏗️</span>
+        <h3>Şantiye ve İnşaat Suyu</h3>
+        <p>Beton ıslatma, kalıp soğutma, toz engelleme ve inşaat alanı genel su ihtiyaçları için düzenli sefer hizmeti sunuyoruz.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🛣️</span>
+        <h3>Yol ve Çevre Temizliği</h3>
+        <p>Yıkım alanları ve şantiye çıkışlarında toz indirgeme, karayolu ve çevre temizliği. Tazyikli su ile etkili ve hızlı sonuç.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🪣</span>
+        <h3>Büyük Depo ve Tank Dolumu</h3>
+        <p>Yeraltı depolarını, bahçe tanklarını ve büyük su haznelerini hızla dolduruyoruz. 8 tonluk kapasitemizle tek seferde maksimum dolum.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🐄</span>
+        <h3>Özel Gün Temizlikleri</h3>
+        <p>Kurban Bayramı döneminde kesim alanlarının tazyikli suyla eksiksiz ve hijyenik biçimde temizlenmesi — zamanında, güvenilir hizmet.</p>
+      </div>
+    </div>
+
+    <!-- water quality note -->
+    <div class="water-note">
+      <div class="water-note-icon">ℹ️</div>
+      <div class="water-note-text">
+        <h4>Su Kalitesi Hakkında</h4>
+        <p>
+          Taşıdığımız su, orman ve kaynak alanlarından temin edilen <strong>temiz kullanım suyudur</strong>. İçme suyu değildir; sanayi, inşaat ve temizlik amaçlı kullanım için uygundur. <strong>Kesinlikle pis dere veya atık su değildir.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ REGIONS ═══════════════════════════════════ -->
+<section id="bolgeler">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Hizmet Bölgelerimiz</div>
+      <h2 class="section-title">İstanbul'un Kuzeyine<br>Eksiksiz Ulaşıyoruz</h2>
+      <p class="section-desc">Ayazağa merkezimizden hareketle aşağıdaki ilçe ve mahallelere su tankeri hizmeti veriyoruz.</p>
+    </div>
+
+    <div class="region-grid">
+      <div class="region-pill">📍 Ayazağa</div>
+      <div class="region-pill">📍 Maslak</div>
+      <div class="region-pill">📍 Sarıyer</div>
+      <div class="region-pill">📍 Kağıthane</div>
+      <div class="region-pill">📍 Beşiktaş</div>
+      <div class="region-pill">📍 Levent</div>
+      <div class="region-pill">📍 Cendere</div>
+      <div class="region-pill">📍 Seyrantepe</div>
+      <div class="region-pill">📍 Alibeyköy</div>
+      <div class="region-pill">📍 Beyoğlu</div>
+      <div class="region-pill">📍 Kasımpaşa</div>
+    </div>
+
+    <p style="margin-top:1.5rem; font-size:0.875rem; color:#5A6A7E;">
+      Listede olmayan bir bölge mi? Arayın, çözüm üretelim.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ PRICING + CONTACT ═══════════════════════════════════ -->
+<section id="iletisim">
+  <div class="section-inner">
+
+    <div class="pricing-note">
+      <div class="big-label">Fiyatlandırma</div>
+      <h3>Şeffaf, Adil Fiyatlandırma</h3>
+      <p>
+        Sabit liste fiyatı uygulamıyoruz. Her işin koşulu farklı olduğundan, fiyatlarımız işin niteliğine göre şekillenir. Hızlıca arayın, size en uygun teklifi anında iletелим.
+      </p>
+
+      <div class="pricing-pills">
+        <div class="pricing-pill">📏 Mesafe</div>
+        <div class="pricing-pill">⏱️ İşin Uzunluğu</div>
+        <div class="pricing-pill">🔄 Sefer Sayısı</div>
+      </div>
+
+      <div class="contact-cta">
+        <a href="https://wa.me/905XXXXXXXXX" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.117 1.529 5.847L.057 23.885a.5.5 0 0 0 .641.619l6.294-1.964A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.073-1.392l-.362-.215-3.756 1.171 1.239-3.637-.236-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp'tan Teklif Al
+        </a>
+        <a href="tel:+905XXXXXXXXX" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Hemen Ara
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="contact-card">
+      <div class="contact-row">
+        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="contact-link contact-link-wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.117 1.529 5.847L.057 23.885a.5.5 0 0 0 .641.619l6.294-1.964A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 0 1-5.073-1.392l-.362-.215-3.756 1.171 1.239-3.637-.236-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp ile Yaz
+        </a>
+        <a href="tel:+905XXXXXXXXX" class="contact-link contact-link-tel-full">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Telefon Et
+        </a>
+      </div>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-item">
+        📍 <span>Ayazağa, İstanbul</span>
+      </div>
+      <div class="info-item">
+        🕐 <span>7/24 — Tatil Yok</span>
+      </div>
+      <div class="info-item">
+        🚚 <span>8 Ton Tanker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer>
+  <p><strong>Karaoğlu Su</strong> &mdash; Ayazağa, İstanbul</p>
+  <p style="margin-top:0.4rem;">7/24 Su Tankeri Hizmeti &bull; Kağıthane &bull; Beşiktaş &bull; Sarıyer &bull; Levent ve çevresi</p>
+  <p style="margin-top:0.75rem; font-size:0.73rem;">© 2025 Karaoğlu Su. Tüm hakları saklıdır.</p>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 68;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Nav shrink on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20
+      ? '0 4px 24px rgba(0,0,0,0.25)'
+      : 'none';
+  });
+</script>
+
+</body>
+</html>
