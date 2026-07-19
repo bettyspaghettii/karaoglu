@@ -44,10 +44,12 @@
 
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <!-- Logo-Bereich mit Fix für mobile Ansicht -->
-      <a href="#" class="flex items-center flex-shrink-0">
-        <img src="Logo (2).png" alt="Karaoğlu Su Logo" class="h-10 min-w-[130px] w-auto object-contain mix-blend-multiply">
+
+      <!-- Logo-Bereich mit absolutem Größen-Zwang -->
+      <a href="#" class="flex items-center flex-shrink-0" style="min-width: 140px; width: 140px;">
+        <img src="Logo (2).png" alt="Karaoğlu Su Logo" class="h-10 w-full object-contain mix-blend-multiply" style="display: block; min-width: 140px; width: 140px;">
       </a>
+     
       <div class="flex items-center gap-3 sm:gap-6">
         <a href="#hizmetler" class="text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition">Hizmetler</a>
         <a href="#galeri" class="text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition">Galeri</a>
