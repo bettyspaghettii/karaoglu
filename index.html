@@ -6,7 +6,273 @@
   <title>Karaoğlu Su – 7/24 Ayazağa Su Tankeri Hizmeti</title>
   <meta name="description" content="Karaoğlu Su – İstanbul'da 7/24 Kesintisiz Su Tankeri Hizmeti. 8 Tonluk Tanker, Orman Kaynaklı Temiz Kullanım Suyu." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karaoğlu Su – 7/24 Ayazağa Su Tankeri Hizmeti</title>
+  <meta name="description" content="Karaoğlu Su – İstanbul'da 7/24 Kesintisiz Su Tankeri Hizmeti. 8 Tonluk Tanker, Orman Kaynaklı Temiz Kullanım Suyu." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fafafa;
+      color: #1e293b;
+    }
+    html { scroll-behavior: smooth; }
+
+    /* Endlos-Scroll Animation für die Galerie */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 4 - 1rem * 4)); }
+    }
+    .marquee-track {
+      display: flex;
+      width: calc(300px * 8 + 1rem * 8);
+      animation: scroll 25s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white pb-16 sm:pb-0">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Logo-Bereich mit Fix für mobile Ansicht -->
+      <a href="#" class="flex items-center flex-shrink-0">
+        <img src="Logo (2).png" alt="Karaoğlu Su Logo" class="h-10 min-w-[130px] w-auto object-contain mix-blend-multiply">
+      </a>
+      <div class="flex items-center gap-3 sm:gap-6">
+        <a href="#hizmetler" class="text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition">Hizmetler</a>
+        <a href="#galeri" class="text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition">Galeri</a>
+        <a href="#bolgeler" class="text-xs sm:text-sm font-semibold text-gray-600 hover:text-gray-900 transition">Bölgeler</a>
+        <a href="#iletisim" class="text-xs sm:text-sm font-semibold text-gray-700 hover:text-gray-900 transition bg-gray-100 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md border border-gray-200">İletişim</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO SECTION (FLEXIBEL FÜR MOBILE & OHNE BLUR) ── -->
+  <section class="relative pt-28 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-blue-50/70 via-[#fafafa] to-[#fafafa] flex items-center justify-center min-h-[calc(100vh-4rem)]">
+    
+    <!-- Hintergrund-Video mit nativer Endlosschleife und voller Schärfe -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+      <video id="hero-video" autoplay loop muted playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70">
+        <source src="Videooo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Heller Overlay-Filter ohne verzerrenden Blur-Effekt -->
+      <div class="absolute inset-0 bg-white/60"></div>
+    </div>
+
+    <!-- Inhalt -->
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10 w-full">
+      <div class="inline-flex items-center gap-2 bg-white/80 border border-blue-200 rounded-full px-3 py-1 text-xs font-semibold text-blue-700 mb-6 uppercase tracking-wider shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span> 7/24 Kesintisiz Hizmet
+      </div>
+      <h1 class="text-3xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
+        İstanbul'da Şantiye ve İnşaat İçin <span class="text-blue-600">Tazyikli Su Tankeri</span>
+      </h1>
+      <p class="text-base md:text-lg text-gray-800 max-w-2xl mx-auto mb-8 leading-relaxed font-medium drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)]">
+        Ayazağa merkezli <span class="text-gray-900 font-bold">8 Tonluk tankerimizle</span>, işin uzunluğuna ve mesafeye göre en hızlı çözümü üretiyoruz. Orman kaynaklı temiz kullanım suyu.
+      </p>
+      
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-xs mx-auto sm:max-w-none">
+        <a href="https://wa.me/905354553764" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-[#25D366]/20 hover:scale-[1.02] transition-all text-sm md:text-base">
+          WhatsApp ile Teklif Al
+        </a>
+        <a href="tel:+905354553764" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-900 text-white font-bold px-6 py-3.5 rounded-xl hover:scale-[1.02] transition-all shadow-md text-sm md:text-base">
+          Hemen Telefon Et
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUTOMATIC SCROLLING GALLERY ── -->
+  <section id="galeri" class="py-6 bg-white border-y border-gray-200 overflow-hidden">
+    <div class="relative w-full">
+      <div class="marquee-track gap-4">
+        
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative group">
+          <img src="WhatsApp Image 2026-06-22 at 20.43.31.jpeg" alt="Su Tankeri" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">8 Tonluk Su Tankerimiz</div>
+        </div>
+        
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative group">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" alt="Şantiye Suyu" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Şantiye ve İnşaat Sahası</div>
+        </div>
+
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative group">
+          <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&q=80" alt="Orman Kaynak Suyu" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Orman Kaynaklı Temiz Su</div>
+        </div>
+
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative group">
+          <img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=400&q=80" alt="Tazyikli Yol Temizliği" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Tazyikli Yol ve Çevre Temizliği</div>
+        </div>
+
+        <!-- REPEAT FOR LOOP ANIMATION -->
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative">
+          <img src="WhatsApp Image 2026-06-22 at 20.43.31.jpeg" alt="Su Tankeri" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">8 Tonluk Su Tankerimiz</div>
+        </div>
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80" alt="Şantiye Suyu" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Şantiye ve İnşaat Sahası</div>
+        </div>
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative">
+          <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&q=80" alt="Orman Kaynak Suyu" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Orman Kaynaklı Temiz Su</div>
+        </div>
+        <div class="w-[300px] h-[200px] bg-gray-100 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative">
+          <img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=400&q=80" alt="Tazyikli Yol Temizliği" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-white text-xs font-semibold">Tazyikli Yol ve Çevre Temizliği</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUICK SPECS (GRID STATS) ── -->
+  <section class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Tanker Kapasitesi</p>
+      <p class="text-3xl font-extrabold text-gray-900 mt-1">8 Ton</p>
+    </div>
+    <div>
+      <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Çalışma Saatleri</p>
+      <p class="text-3xl font-extrabold text-blue-600 mt-1">7 / 24</p>
+    </div>
+    <div>
+      <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Su Kalitesi</p>
+      <p class="text-3xl font-extrabold text-gray-900 mt-1">Temiz Kaynak</p>
+    </div>
+    <div>
+      <p class="text-xs text-gray-500 uppercase font-bold tracking-wider">Merkez Bölge</p>
+      <p class="text-3xl font-extrabold text-gray-900 mt-1">Ayazağa</p>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="hizmetler" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="mb-12">
+      <p class="text-s font-bold text-blue-600 uppercase tracking-widest mb-2">Neler Yapıyoruz?</p>
+      <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Kullanım Suyu Çözümleri</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">🏗️ Şantiye & İnşaat Suyu</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Yıkım sırasında, toz engelleme und inşaat alanı genel su ihtiyaçları için düzenli tazyikli su desteği sağlıyoruz.</p>
+      </div>
+      <div class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">🛣️ Yol & Çevre Temizliği</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Yıkım alanlarında toz indirgeme işlemleri ve şantiye çıkışlarında yolların yüksek basınçlı suyla yıkanması.</p>
+      </div>
+      <div class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">🪣 Depo & Tank Dolumu</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Büyük hacimli su depoları, bahçe hazneleri ve sanayi tesislerinin su tankları 8 tonluk tankerimizle hızla doldurulur.</p>
+      </div>
+      <div class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">🪣 Bayram & Özel Gün Temizlikleri</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Kurban Bayramı döneminde kesim alanlarının tazyikli su yardımıyla hijyenik, hızlı ve eksiksiz temizliği.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-blue-50 border border-blue-200 p-6 rounded-xl flex items-start gap-4">
+      <span class="text-blue-600 font-bold text-lg">ℹ️</span>
+      <p class="text-sm text-gray-600 leading-relaxed">
+         Taşıdığımız su ormanlık alanlardaki temiz kaynaklardan alınmaktadır. Kesinlikle kirli dere veya atık su değildir. <span class="text-gray-900 font-semibold">İçme suyu değildir</span>, şantiye, sanayi ve temizlik kullanım suyudur.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── REGIONS ── -->
+  <section id="bolgeler" class="bg-white border-y border-gray-200 py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12">
+        <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Nereye Geliyoruz?</p>
+        <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Hizmet Bölgelerimiz</h2>
+        <p class="text-sm text-gray-600 mt-2">Ayazağa merkezli tankerimizle aktif olarak hızlı ulaştığımız bölgeler:</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Ayazağa</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Maslak</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Sarıyer</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Cendere</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Seyrantepe</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Levent</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Kağıthane</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Beşiktaş</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Alibeyköy</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Beyoğlu</span>
+        <span class="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-2 rounded-xl text-sm font-semibold">Kasımpaşa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT & PRICING ── -->
+  <section id="iletisim" class="max-w-4xl mx-auto px-4 py-20 text-center">
+    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Fiyat Talebi</p>
+    <h2 class="text-3xl font-bold text-gray-900 tracking-tight mb-4">Hızlı Fiyat Teklifi Alın</h2>
+    <p class="text-gray-600 text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+      Sabit bir fiyat listemiz yoktur. Ücretlendirme <span class="text-gray-900 font-semibold">mesafeye, işin uzunluğuna ve sefer sayısına göre</span> değişiklik göstermektedir. Detaylar için doğrudan bizimle iletişime geçebilirsiniz.
+    </p>
+
+    <div class="bg-white border border-gray-200 p-8 rounded-2xl max-w-xl mx-auto shadow-sm">
+      <p class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-4">Doğrudan İletişim Hattı</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="https://wa.me/905354553764" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold p-4 rounded-xl transition hover:opacity-90 shadow-md shadow-[#25D366]/10">
+          WhatsApp'tan Yaz
+        </a>
+        <a href="tel:+905354553764" class="flex-1 inline-flex items-center justify-center gap-2 bg-gray-900 text-white font-bold p-4 rounded-xl transition hover:bg-gray-800">
+          Şimdi Ara
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="border-t border-gray-200 bg-gray-50 py-8 text-center text-xs text-gray-500">
+    <p class="font-bold text-gray-700">Karaoğlu Su &bull; Ayazağa, İstanbul</p>
+    <p class="mt-1">&copy; 2026 Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- ── STICKY MOBILE CTA ── -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 p-3 grid grid-cols-2 gap-2 shadow-2xl">
+    <a href="https://wa.me/905354553764" target="_blank" rel="noopener" class="bg-[#25D366] text-white text-center font-bold py-3 rounded-lg text-sm block">
+      WhatsApp
+    </a>
+    <a href="tel:+905354553764" class="bg-gray-900 text-white text-center font-bold py-3 rounded-lg text-sm block">
+      Ara
+    </a>
+  </div>
+
+  <script>
+    // Smooth scroll für Navigations-Links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 68;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
