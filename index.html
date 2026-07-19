@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
-  <style>
+ <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #fafafa;
@@ -38,6 +38,28 @@
     .marquee-track:hover {
       animation-play-state: paused;
     }
+
+    /* BURGER MENÜ FIX: Mobil verstecken, wenn nicht gecheckt */
+    @media (max-width: 639px) {
+      #menu-toggle ~ div {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transform: translateY(-10px);
+      }
+      #menu-toggle:checked ~ div {
+        max-height: 350px !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+        transform: translateY(0);
+      }
+    }
+
+    /* Burger-Striche Animation */
+    #menu-toggle:checked ~ label span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    #menu-toggle:checked ~ label span:nth-child(2) { opacity: 0; }
+    #menu-toggle:checked ~ label span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
   </style>
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white pb-16 sm:pb-0">
