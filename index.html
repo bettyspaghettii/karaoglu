@@ -83,10 +83,11 @@
   <!-- ── HERO SECTION (FLEXIBEL FÜR MOBILE & OHNE BLUR) ── -->
   <section class="relative pt-28 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-blue-50/70 via-[#fafafa] to-[#fafafa] flex items-center justify-center min-h-[calc(100vh-4rem)]">
     
-    <!-- Hintergrund-Video mit nativer Endlosschleife und voller Schärfe -->
+
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-      <video id="hero-video" autoplay loop muted playsinline class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70">
-        <source src="Videooo.mp4" type="video/mp4">
+    
+      <video id="hero-video" autoplay loop muted playsinline class="absolute top-[48%] sm:top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover opacity-70">
+        <source src="Videooo.mp4" type="video/mp4 text/mp4">
         Your browser does not support the video tag.
       </video>
       <!-- Heller Overlay-Filter ohne verzerrenden Blur-Effekt -->
@@ -264,10 +265,42 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+ <!-- ── FOOTER ── -->
   <footer class="border-t border-gray-200 bg-gray-50 py-8 text-center text-xs text-gray-500">
     <p class="font-bold text-gray-700">Karaoğlu Su &bull; Ayazağa, İstanbul</p>
     <p class="mt-1">&copy; 2026 Tüm hakları saklıdır.</p>
   </footer>
 
+  <!-- ── STICKY MOBILE CTA ── -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 p-3 grid grid-cols-2 gap-2 shadow-2xl">
+    <a href="https://wa.me/905354553764" target="_blank" rel="noopener" class="bg-[#25D366] text-white text-center font-bold py-3 rounded-lg text-sm block">
+      WhatsApp
+    </a>
+    <a href="tel:+905354553764" class="bg-gray-900 text-white text-center font-bold py-3 rounded-lg text-sm block">
+      Ara
+    </a>
+  </div>
+
+ 
+  <script>
+    // Smooth scroll + Auto-close Mobile Menu
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          
+          // Schließt das Burger-Menü nach dem Klick automatisch
+          const checker = document.getElementById('menu-toggle');
+          if (checker) checker.checked = false;
+
+          const offset = 68;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
  
